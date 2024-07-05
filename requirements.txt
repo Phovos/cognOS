@@ -1,0 +1,7 @@
+Flask
+Flask-Static-Compress
+flask-static-compress
+flask==3.0.1
+gunicorn
+markdown
+werkzeug==3.0.1

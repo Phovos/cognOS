@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="/">
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <title>Knowledge Base REPL</title>
+  </head>
+  <body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    {% include 'partials/_header.html' %}
+    <div class="container mx-auto px-4 mt-8 min-h-screen">
+      <div class="py-10">
+        <h1 class="text-3xl font-bold mb-4">Knowledge Base REPL</h1>
+        <div class="mb-4">
+          <textarea id="repl-input" class="w-full p-2 border rounded" rows="4" placeholder="Enter your query here..."></textarea>
+        </div>
+        <button id="execute-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Execute
+        </button>
+        <div id="repl-output" class="mt-4 p-4 bg-white border rounded">
+          <!-- REPL output will be displayed here -->
+        </div>
+      </div>
+    </div>
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>
