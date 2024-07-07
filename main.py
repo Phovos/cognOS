@@ -2,10 +2,17 @@ import logging
 import os
 from flask import Flask, render_template, request, jsonify
 from gunicorn.app.base import BaseApplication
-from markdown_loader import load_markdown_files
-from repl_executor import execute_repl_query
+from src.utils.loader import load_markdown_files, execute_repl_query
 
-from routes import create_app # located in parent dir with main.py
+def create_app():
+    app = Flask(__name__, static_folder='static')
+
+    @app.route("/")
+    def home_route():
+        return render_template("home.html")
+
+    return app
+
 app = create_app()
 
 # Setup logging
