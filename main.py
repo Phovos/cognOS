@@ -3,6 +3,9 @@ import os
 from flask import Flask, render_template, request, jsonify
 from gunicorn.app.base import BaseApplication
 from src.utils.loader import load_markdown_files, execute_repl_query
+from src.pidloop import *
+from externalreq.numpy_quantum import main as quantum_main
+
 
 def create_app():
     app = Flask(__name__, static_folder='static')
@@ -48,6 +51,7 @@ class StandaloneApplication(BaseApplication):
         return self.application
 
 if __name__ == "__main__":
+    quantum_main()
     options = {
         "bind": "0.0.0.0:8080",
         "workers": 4,
